@@ -72,6 +72,7 @@ footer{
     color: var(--secondary-color);
     font-family: var(--primary-font);
     font-weight: 400;
+    align-items: center;
 }
 .container-icon i{
     font-size: 1.6rem;
@@ -101,9 +102,24 @@ footer{
 @media (max-width:640px){
     main{
         flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        padding: 32px;
+    }
+    header{
+        justify-content: space-around;
+        padding: 16px 0;
     }
     footer{
         flex-direction: column;
         height: auto;
+        padding: 32px;
+        gap: 32px;
+    }
+    .copyright{
+        display: none;
+    }
+    .container-social{
+        flex-direction: column;
     }
 }
