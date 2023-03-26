@@ -93,6 +93,14 @@ footer{
     border-radius: 50%;
     border: 2px solid var(--secondary-color);
     padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.container-icon-social:hover{
+    background-color: #FFFFFF;
+    color: #3347B0;
 }
 .container-icon-social i{
     font-size: 24px;
