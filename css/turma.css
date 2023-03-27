@@ -1,0 +1,103 @@
+:root{
+    --primary-color: #3347B0;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #E5B657;
+    --primary-font: 'Roboto';
+    --secondary-font: 'Poppins';
+}
+main{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+}
+.container-legenda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 96px;
+    height: 50px;
+    width: 100%;
+    background-color: #BCC2E5;
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+}
+.container-status-geral{
+    display: flex;
+    gap: 24px;
+}
+.container-status{
+    display: flex;
+    gap: 8px;
+}
+.quadrado-cursando{
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+}
+.quadrado-finalizado{
+    width: 20px;
+    height: 20px;
+    background-color: var(--tertiary-color);
+}
+.title-main{
+    padding-top: 36px;
+    font-family: var(--primary-font);
+    font-size: 64px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+.container-card-gerais{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 64px;
+    gap: 62px;
+}
+.container-card-cursando{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    background-color: var(--primary-color);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
+    font-family: var(--secondary-font);
+    text-align: center;
+    color: #fff;
+    gap: 16px;
+}
+.container-card-finalizado{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    background-color: var(--tertiary-color);
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
+    font-family: var(--secondary-font);
+    text-align: center;
+    color: #fff;
+    gap: 16px;
+}
+.img-card{
+    width: 200px;
+    height: 200px;
+}
+/* MOBILE */
+@media (max-width:640px){
+    .container-legenda{
+        justify-content: space-around;
+        height: auto;
+        padding: 0 0;
+    }
+    .container-status-geral{
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+    }
+    .title-main{
+        font-size: 2.8rem;
+        text-align: center;
+    }
+    .container-card-gerais{
+        justify-content: center;
+    }
+}
