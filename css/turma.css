@@ -64,6 +64,11 @@ main{
     text-align: center;
     color: #fff;
     gap: 16px;
+    transition: .5s;
+    cursor: pointer;
+}
+.container-card-cursando:hover{
+    transform: scale(1.1);
 }
 .container-card-finalizado{
     display: flex;
@@ -76,6 +81,11 @@ main{
     text-align: center;
     color: #fff;
     gap: 16px;
+    transition: .5s;
+    cursor: pointer;
+}
+.container-card-finalizado:hover{
+    transform: scale(1.1);
 }
 .img-card{
     width: 200px;
