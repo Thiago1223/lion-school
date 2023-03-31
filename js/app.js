@@ -21,7 +21,7 @@ export const preencherCardAlunosPeloCurso = async (nome) => {
     const response = await fetch(url)
     const data = await response.json()
 
-    return data.alunos
+    return data.curso
 }
 
 export const preencherCardAlunosPelaSituacao = async (nomeSituacao) => {
@@ -29,7 +29,7 @@ export const preencherCardAlunosPelaSituacao = async (nomeSituacao) => {
     const response = await fetch(url)
     const data = await response.json()
 
-    return data.alunos
+    return data.status
 }
 
-console.log(preencherCardAlunos())
+console.log(preencherCardAlunosPelaSituacao('finalizado'))
