@@ -28,15 +28,15 @@ main{
     padding: 26px;
     gap: 8px;
 }
+.text-status{
+    cursor: pointer;
+}
 .container-info{
     display: flex;
     width: 100%;
     justify-content: space-between;
     transition: 0.5s;
     cursor: pointer;
-}
-.desaparecer{
-    display: none;
 }
 .container-info:hover{
     transform: scale(1.1);
@@ -138,5 +138,11 @@ main{
     }
     .container-card-gerais{
         justify-content: center;
+    }
+    .container-situacao{
+        left: 22px;
+        top: 164px;
+        width: 120px;
+        height: 80px;
     }
 }

@@ -31,5 +31,3 @@ export const preencherCardAlunosPelaSituacao = async (nomeSituacao) => {
 
     return data.status
 }
-
-console.log(preencherCardAlunosPelaSituacao('finalizado'))

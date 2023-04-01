@@ -1,7 +1,6 @@
 'use strict'
 
 import { preencherDadosCursos } from "./app.js"
-import { preencherCardAlunos } from "./app.js"
 
 const cursos = await preencherDadosCursos()
 
@@ -17,8 +16,7 @@ const criarCardCursos = (curso) => {
     containerCurso.addEventListener('click', (event) => {     
       if(curso.sigla == 'DS'){
         localStorage.setItem('nomeTurma', 'DS')
-          
-      }else{
+      } else {
         localStorage.setItem('nomeTurma', 'RDS')
       }
     })
@@ -26,8 +24,8 @@ const criarCardCursos = (curso) => {
     const containerInfoCurso = document.createElement('div')
     containerInfoCurso.classList.add('container-info-curso')
 
-    const iconDs = document.createElement('i')
-    iconDs.classList.add('fa-sharp', 'fa-solid', 'fa-code')
+    const imgCard = document.createElement('img')
+    imgCard.src = curso.icone
 
     const titleCurso = document.createElement('h1')
     titleCurso.classList.add('title-curso')
@@ -37,7 +35,7 @@ const criarCardCursos = (curso) => {
 
     containerCurso.append(containerInfoCurso)
 
-    containerInfoCurso.append(iconDs, titleCurso)
+    containerInfoCurso.append(imgCard, titleCurso)
 
     return containerCurso
 }

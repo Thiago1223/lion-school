@@ -1,22 +1,25 @@
 'use strict'
 
 import { preencherCardAlunosPeloCurso } from "./app.js"
-import { preencherCardAlunosPelaSituacao } from "./app.js"
 
 let turmaCurso = localStorage.getItem('nomeTurma')
 const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
 
 
-const criarMainTurmaDs = (aluno) => {
-     const containerCardGerais = document.createElement('div')
-    containerCardGerais.classList.add('container-card-gerais')
+const criarMainTurma = (aluno) => {
 
-    const containerCardGeraisFinalizado = document.createElement('div')
+    const finalizado = document.getElementById('container-finalizado')
+    const cursando = document.getElementById('container-cursando')
+    const todosCursos = document.getElementById('container-todosAlunos')
+
+    const containerCardGerais = document.createElement('div')
     containerCardGerais.classList.add('container-card-gerais')
 
     const containerCardCursando = document.createElement('div')
-    const containerCardFinalizado = document.createElement('div')
+    containerCardCursando.classList.add('container-card-cursando')
 
+    const containerCardFinalizado = document.createElement('div')
+    containerCardFinalizado.classList.add('container-card-finalizado')
    
     const nameCard = document.createElement('p')
     nameCard.classList.add('name-card')
@@ -26,120 +29,58 @@ const criarMainTurmaDs = (aluno) => {
     imgCard.classList.add('img-card')
     imgCard.src = aluno.foto
 
-
-    const nameCardFinalizado = document.createElement('p')
-    nameCardFinalizado.classList.add('name-card')
-    nameCardFinalizado.textContent = aluno.nome
-
-    const imgCardFinalizado = document.createElement('img')
-    imgCardFinalizado.classList.add('img-card')
-    imgCardFinalizado.src = aluno.foto
-    containerCardFinalizado.classList.add('container-card-finalizado')
-    containerCardCursando.classList.add('container-card-cursando')
-
-
-    const finalizado = document.getElementById('container-finalizado')
-    const cursando = document.getElementById('container-cursando')
-    const todosCursos = document.getElementById('container-todosAlunos')
-
     function mostrarTodosCursos(){
-        if (aluno.status == "Cursando") {
-
-
+        if (aluno.status == 'Cursando') {
             containerCardCursando.classList.add('container-card-cursando')
             containerCardGerais.append(containerCardCursando)
             containerCardCursando.append(imgCard, nameCard)
-        }else{
-                containerCardFinalizado.classList.add('container-card-finalizado')
-                containerCardGerais.append(containerCardFinalizado)
-                containerCardFinalizado.append(imgCardFinalizado, nameCardFinalizado)
-               
-            }
+        } else {
+            containerCardFinalizado.classList.add('container-card-finalizado')
+            containerCardGerais.append(containerCardFinalizado)
+            containerCardFinalizado.append(imgCard, nameCard)   
+        }
     }
 
     function mostrarCursando() {
-        if (aluno.status == "Cursando") {
-
-
+        if (aluno.status == 'Cursando') {
             containerCardCursando.classList.add('container-card-cursando')
             containerCardGerais.append(containerCardCursando)
             containerCardCursando.append(imgCard, nameCard)
         }
     }
+
     function mostrarFinalizados() {
         if (aluno.status == 'Finalizado') {
             containerCardFinalizado.classList.add('container-card-finalizado')
             containerCardGerais.append(containerCardFinalizado)
-            containerCardFinalizado.append(imgCardFinalizado, nameCardFinalizado)
-           
+            containerCardFinalizado.append(imgCard, nameCard)  
         }
     }
+
     finalizado.addEventListener('click', function () {
-
         mostrarFinalizados()
-        containerCardCursando.classList.add('desaparecer')
-        containerCardGerais.removeChild(containerCardCursando)
-
-
+        containerCardGerais.removeChild(containerCardCursando)             
     })
-
 
     cursando.addEventListener('click', function () {
         mostrarCursando()
-        containerCardFinalizado.classList.add('desaparecer')
-        containerCardGerais.removeChild(containerCardFinalizado)
-
+        containerCardGerais.removeChild(containerCardFinalizado)             
     })
+
     todosCursos.addEventListener('click',function(){
-        mostrarTodosCursos()
-        console.log('klsdjf');
-        
-        
+        mostrarTodosCursos()           
     })
+
     window.onload = mostrarTodosCursos()
-
-
-    // containerCardGerais.append(containerCardCursando,containerCardFinalizado)
- 
-   
-        // containerCardGerais.append(containerCardFinalizado)
-        // containerCardFinalizado.append(imgCardFinalizado, nameCardFinalizado)
-        
-  
-        // containerCardGerais.append(containerCardCursando)
-        // containerCardCursando.append(imgCard, nameCard)
-    
-  
-   
-
-
   
     return containerCardGerais
-    
-    
+     
 }
 
-
-
-
-
-
-
-
-
-
-
-const carregarMainDs = () => {
+const carregarMain = () => {
     const container = document.getElementById('container-card-gerais')
-    const cards = alunos.map(criarMainTurmaDs)
-
-
+    const cards = alunos.map(criarMainTurma)
     container.replaceChildren(...cards)
 }
 
-
-
-carregarMainDs()
-
-
-
+carregarMain()

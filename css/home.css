@@ -52,9 +52,9 @@ main{
     align-items: center;
     gap: 24px;
 }
-.container-info-curso i{
-    color: var(--secondary-color);
-    font-size: 64px;
+.container-info-curso img{
+    width: 100px;
+    height: 100px;
 }
 .title-curso{
     font-size: 4rem;
