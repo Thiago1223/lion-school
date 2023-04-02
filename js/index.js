@@ -14,11 +14,11 @@ const criarCardCursos = (curso) => {
     containerCurso.setAttribute('href', 'http://127.0.0.1:5500/html/turma.html')
 
     containerCurso.addEventListener('click', (event) => {     
-      if(curso.sigla == 'DS'){
+        if(curso.sigla == 'DS'){
         localStorage.setItem('nomeTurma', 'DS')
-      } else {
+        } else {
         localStorage.setItem('nomeTurma', 'RDS')
-      }
+        }
     })
 
     const containerInfoCurso = document.createElement('div')

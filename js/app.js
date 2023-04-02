@@ -31,3 +31,11 @@ export const preencherCardAlunosPelaSituacao = async (nomeSituacao) => {
 
     return data.status
 }
+
+export const preencherCardAlunoPelaMatricula = async (matricula) => {
+    const url = `http://localhost:8080/v1/lion-school/alunos/${matricula}`
+    const response = await fetch(url)
+    const data = await response.json()
+
+    return data.aluno
+}

@@ -5,7 +5,6 @@ import { preencherCardAlunosPeloCurso } from "./app.js"
 let turmaCurso = localStorage.getItem('nomeTurma')
 const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
 
-
 const criarMainTurma = (aluno) => {
 
     const finalizado = document.getElementById('container-finalizado')
@@ -15,11 +14,25 @@ const criarMainTurma = (aluno) => {
     const containerCardGerais = document.createElement('div')
     containerCardGerais.classList.add('container-card-gerais')
 
-    const containerCardCursando = document.createElement('div')
+    const containerCardCursando = document.createElement('a')
     containerCardCursando.classList.add('container-card-cursando')
+    containerCardCursando.setAttribute('href', 'http://127.0.0.1:5500/html/aluno.html')
 
-    const containerCardFinalizado = document.createElement('div')
+    containerCardCursando.addEventListener('click', (event) => {     
+        localStorage.setItem('nomeAluno', aluno.nome)
+        localStorage.setItem('imgAluno', aluno.foto)
+        localStorage.setItem('matricula', aluno.matricula)
+    })
+
+    const containerCardFinalizado = document.createElement('a')
     containerCardFinalizado.classList.add('container-card-finalizado')
+    containerCardFinalizado.setAttribute('href', 'http://127.0.0.1:5500/html/aluno.html')
+
+    containerCardFinalizado.addEventListener('click', (event) => {     
+        localStorage.setItem('nomeAluno', aluno.nome)
+        localStorage.setItem('imgAluno', aluno.foto)
+        localStorage.setItem('matricula', aluno.matricula)
+    })
    
     const nameCard = document.createElement('p')
     nameCard.classList.add('name-card')
@@ -77,6 +90,18 @@ const criarMainTurma = (aluno) => {
      
 }
 
+const mostrarFiltro = () => {
+    const status = document.getElementById('button-status')
+    status.addEventListener('click', () => {
+        const containerSituacao = document.getElementById('container-situacao').style.display
+        if (containerSituacao == 'none') {
+            document.getElementById('container-situacao').style.display = 'flex'
+        } else {
+            document.getElementById('container-situacao').style.display = 'none'
+        }
+    })
+}
+
 const carregarMain = () => {
     const container = document.getElementById('container-card-gerais')
     const cards = alunos.map(criarMainTurma)
@@ -84,3 +109,4 @@ const carregarMain = () => {
 }
 
 carregarMain()
+mostrarFiltro()
