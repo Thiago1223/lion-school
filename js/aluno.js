@@ -8,7 +8,6 @@ let imgAlunoCurso = localStorage.getItem('imgAluno')
 let matriculaCurso = localStorage.getItem('matricula')
 const matricula = await preencherCardAlunoPelaMatricula(matriculaCurso)
 const media = await preencherCardEstatisticasAlunoPelaMatricula(matriculaCurso)
-console.log(media)
 
 const criarCardAluno = () => {
 
@@ -55,24 +54,24 @@ const criarCardStatusAluno = (status) => {
     materia.textContent = status.sigla
 
 
-    if (parseInt(status.media) > 50) {
+    if (parseInt(status.media) > 60) {
         notas.classList.add('notas-azul')
         barra.classList.add('barra-azul')
         barra.style.height = `${status.media}%`
         containerProgresso.append(containerBarra)
         containerNotas.append(notas)
         containerBarra.append(barra)
-    } else if (parseInt(status.media) == 50) {
+    } else if (parseInt(status.media) >= 50) {
         notas.classList.add('notas-amarelo')
         barra.classList.add('barra-amarelo')
         barra.style.height = `${status.media}%`
         containerProgresso.append(containerBarra)
         containerNotas.append(notas)
         containerBarra.append(barra)
-    } else {
-        barra.style.height = `${status.media}%`
+    } else if (parseInt(status.media) < 50) {
         notas.classList.add('notas-vermelho')
         barra.classList.add('barra-vermelho')
+        barra.style.height = `${status.media}%`
         containerProgresso.append(containerBarra)
         containerNotas.append(notas)
         containerBarra.append(barra)
