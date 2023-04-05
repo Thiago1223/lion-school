@@ -85,6 +85,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     padding: 34px;
+    gap: 64px;
 }
 .container-card-cursando{
     display: flex;

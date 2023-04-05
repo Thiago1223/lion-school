@@ -14,26 +14,19 @@ const criarMainTurma = (aluno) => {
     const finalizado = document.getElementById('container-finalizado')
     const cursando = document.getElementById('container-cursando')
     const todosCursos = document.getElementById('container-todosAlunos')
-    const geral = document.getElementById('container-card-gerais')
+    const containerCardGerais = document.getElementById('container-card-gerais')
 
-    const containerCardGerais = document.createElement('div')
-    containerCardGerais.classList.add('container-card-gerais')
+    const containerCard = document.createElement('a')
+    containerCard.classList.add('container-card-cursando')
+    containerCard.setAttribute('href', 'http://127.0.0.1:5500/html/aluno.html')
 
-    const containerCardCursando = document.createElement('a')
-    containerCardCursando.classList.add('container-card-cursando')
-    containerCardCursando.setAttribute('href', 'http://127.0.0.1:5500/html/aluno.html')
+    if (aluno.status == 'Finalizado') {
+        containerCard.classList.add('container-card-finalizado')
+    } else {
+        containerCard.classList.add('container-card-cursando')
+    }
 
-    containerCardCursando.addEventListener('click', (event) => {     
-        localStorage.setItem('nomeAluno', aluno.nome)
-        localStorage.setItem('imgAluno', aluno.foto)
-        localStorage.setItem('matricula', aluno.matricula)
-    })
-
-    const containerCardFinalizado = document.createElement('a')
-    containerCardFinalizado.classList.add('container-card-finalizado')
-    containerCardFinalizado.setAttribute('href', 'http://127.0.0.1:5500/html/aluno.html')
-
-    containerCardFinalizado.addEventListener('click', (event) => {     
+    containerCard.addEventListener('click', (event) => {     
         localStorage.setItem('nomeAluno', aluno.nome)
         localStorage.setItem('imgAluno', aluno.foto)
         localStorage.setItem('matricula', aluno.matricula)
@@ -49,53 +42,51 @@ const criarMainTurma = (aluno) => {
 
     function mostrarTodosCursos(){
         if (aluno.status == 'Cursando') {
-            containerCardCursando.classList.add('container-card-cursando')
-            containerCardGerais.append(containerCardCursando)
-            containerCardCursando.append(imgCard, nameCard)
+            containerCard.classList.add('container-card-cursando')
+            containerCardGerais.append(containerCard)
+            containerCard.append(imgCard, nameCard)
         } else {
-            containerCardFinalizado.classList.add('container-card-finalizado')
-            containerCardGerais.append(containerCardFinalizado)
-            containerCardFinalizado.append(imgCard, nameCard)   
+            containerCard.classList.add('container-card-finalizado')
+            containerCardGerais.append(containerCard)
+            containerCard.append(imgCard, nameCard)   
         }
     }
 
     function mostrarCursando() {
         if (aluno.status == 'Cursando') {
-            containerCardCursando.classList.add('container-card-cursando')
-            containerCardGerais.append(containerCardCursando)
-            containerCardCursando.append(imgCard, nameCard)
+            containerCard.classList.add('container-card-cursando')
+            containerCardGerais.append(containerCard)
+            containerCard.append(imgCard, nameCard)
+        } else {
+            containerCardGerais.removeChild(containerCard)
         }
     }
 
     function mostrarFinalizados() {
         if (aluno.status == 'Finalizado') {
-            containerCardFinalizado.classList.add('container-card-finalizado')
-            containerCardGerais.append(containerCardFinalizado)
-            containerCardFinalizado.append(imgCard, nameCard)  
+            containerCard.classList.add('container-card-finalizado')
+            containerCardGerais.append(containerCard)
+            containerCard.append(imgCard, nameCard)  
+        } else {
+            containerCardGerais.removeChild(containerCard)
         }
     }
 
     finalizado.addEventListener('click', function () {
         mostrarFinalizados()
-        if (containerCardGerais.contains(containerCardCursando)) {
-            containerCardGerais.removeChild(containerCardCursando)  
-        }  
     })
 
     cursando.addEventListener('click', function () {
         mostrarCursando()
-        if (containerCardGerais.contains(containerCardFinalizado)) {
-            containerCardGerais.removeChild(containerCardFinalizado)  
-        }
     })
 
     todosCursos.addEventListener('click',function(){
         mostrarTodosCursos()           
     })
 
-    window.onload = mostrarTodosCursos()
+    containerCard.append(imgCard, nameCard)
   
-    return containerCardGerais
+    return containerCard
      
 }
 
