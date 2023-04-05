@@ -75,7 +75,7 @@ main{
     background-color: var(--tertiary-color);
 }
 .title-main{
-    padding-top: 36px;
+    padding: 36px 0px;
     font-family: var(--primary-font);
     font-size: 64px;
     font-weight: 500;
