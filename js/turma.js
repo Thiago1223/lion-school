@@ -58,7 +58,9 @@ const criarMainTurma = (aluno) => {
             containerCardGerais.append(containerCard)
             containerCard.append(imgCard, nameCard)
         } else {
-            containerCardGerais.removeChild(containerCard)
+            if (containerCardGerais.contains(containerCard)) {
+                containerCardGerais.removeChild(containerCard)
+            }
         }
     }
 
@@ -68,7 +70,9 @@ const criarMainTurma = (aluno) => {
             containerCardGerais.append(containerCard)
             containerCard.append(imgCard, nameCard)  
         } else {
-            containerCardGerais.removeChild(containerCard)
+            if (containerCardGerais.contains(containerCard)) {
+                containerCardGerais.removeChild(containerCard)
+            }
         }
     }
 
@@ -80,7 +84,7 @@ const criarMainTurma = (aluno) => {
         mostrarCursando()
     })
 
-    todosCursos.addEventListener('click',function(){
+    todosCursos.addEventListener('click', function () {
         mostrarTodosCursos()           
     })
 
