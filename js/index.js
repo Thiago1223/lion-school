@@ -8,7 +8,8 @@ const cursos = await preencherDadosCursos()
 let getTitleDS = pegarTituloDS()
 let getTitleRDS = pegarTituloRDS()
 const containerClose = document.getElementById('container-close')
-containerClose.addEventListener('click', function(){
+
+containerClose.addEventListener('click', () =>{
     window.close()
 })
 

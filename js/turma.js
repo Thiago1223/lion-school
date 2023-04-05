@@ -14,6 +14,7 @@ const criarMainTurma = (aluno) => {
     const finalizado = document.getElementById('container-finalizado')
     const cursando = document.getElementById('container-cursando')
     const todosCursos = document.getElementById('container-todosAlunos')
+    const geral = document.getElementById('container-card-gerais')
 
     const containerCardGerais = document.createElement('div')
     containerCardGerais.classList.add('container-card-gerais')
@@ -76,12 +77,16 @@ const criarMainTurma = (aluno) => {
 
     finalizado.addEventListener('click', function () {
         mostrarFinalizados()
-        containerCardGerais.removeChild(containerCardCursando)             
+        if (containerCardGerais.contains(containerCardCursando)) {
+            containerCardGerais.removeChild(containerCardCursando)  
+        }  
     })
 
     cursando.addEventListener('click', function () {
         mostrarCursando()
-        containerCardGerais.removeChild(containerCardFinalizado)             
+        if (containerCardGerais.contains(containerCardFinalizado)) {
+            containerCardGerais.removeChild(containerCardFinalizado)  
+        }
     })
 
     todosCursos.addEventListener('click',function(){

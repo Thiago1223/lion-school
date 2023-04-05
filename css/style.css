@@ -113,7 +113,7 @@ footer{
         gap: 32px;
     }
     .copyright{
-        display: none;
+        text-align: center;
     }
     .container-social{
         flex-direction: column;
