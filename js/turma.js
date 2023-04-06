@@ -17,7 +17,7 @@ const criarMainTurma = (aluno) => {
 
     const containerCard = document.createElement('a')
     containerCard.classList.add('container-card-cursando')
-    containerCard.setAttribute('href', 'http://127.0.0.1:5500/html/aluno.html')
+    containerCard.setAttribute('href', '../html/aluno.html')
 
     if (aluno.status == 'Finalizado') {
         containerCard.classList.add('container-card-finalizado')
@@ -76,19 +76,14 @@ const criarMainTurma = (aluno) => {
         }
     }
 
-
-
-        const input = document.getElementById('input-ano').value
-        const search = document.getElementById('container-search')
-        
-        search.addEventListener('click', () => {
-            if (input == aluno.ano) {
-                mostrarTodosCursos()
-            }
-        })
-
+    const input = document.getElementById('input-ano').value
+    const search = document.getElementById('container-search')
     
-
+    search.addEventListener('click', () => {
+        if (input == aluno.ano) {
+            mostrarTodosCursos()
+        }
+    })
 
     finalizado.addEventListener('click', function () {
         mostrarFinalizados()  

@@ -16,7 +16,7 @@ const criarCardCursos = (curso) => {
 
     const containerCurso = document.createElement('a')
     containerCurso.classList.add('container-curso')
-    containerCurso.setAttribute('href', 'http://127.0.0.1:5500/html/turma.html')
+    containerCurso.setAttribute('href', '../html/turma.html')
 
     containerCurso.addEventListener('click', (event) => {
         if (curso.sigla == 'DS') {
