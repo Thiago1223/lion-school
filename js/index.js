@@ -1,12 +1,8 @@
 'use strict'
 
 import { preencherDadosCursos } from "./app.js"
-import {pegarTituloDS} from './tituloCurso.js'
-import {pegarTituloRDS} from './tituloCurso.js'
 
 const cursos = await preencherDadosCursos()
-let getTitleDS = pegarTituloDS()
-let getTitleRDS = pegarTituloRDS()
 const containerClose = document.getElementById('container-close')
 
 containerClose.addEventListener('click', () =>{
@@ -25,10 +21,8 @@ const criarCardCursos = (curso) => {
     containerCurso.addEventListener('click', (event) => {
         if (curso.sigla == 'DS') {
             localStorage.setItem('nomeTurma', 'DS')
-            localStorage.setItem('nomeTurmaCurso', getTitleDS)
         } else {
             localStorage.setItem('nomeTurma', 'RDS')
-            localStorage.setItem('nomeTurmaCurso', getTitleRDS)
         }
     })
 

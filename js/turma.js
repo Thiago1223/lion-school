@@ -3,13 +3,12 @@
 import { preencherCardAlunosPeloCurso } from "./app.js"
 
 let turmaCurso = localStorage.getItem('nomeTurma')
-let nomeCursosTitulo = localStorage.getItem('nomeTurmaCurso')
 const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
 
 const criarMainTurma = (aluno) => {
 
     const titulo = document.getElementById('title-main')
-    titulo.textContent = nomeCursosTitulo
+    titulo.textContent = aluno.nomeCurso.replace('001 - Técnico em ', '')
 
     const finalizado = document.getElementById('container-finalizado')
     const cursando = document.getElementById('container-cursando')

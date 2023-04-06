@@ -115,7 +115,4 @@ footer{
     .copyright{
         text-align: center;
     }
-    .container-social{
-        flex-direction: column;
-    }
 }

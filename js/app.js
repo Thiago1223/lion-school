@@ -1,7 +1,7 @@
 'use strict'
 
 export const preencherDadosCursos = async () => {
-    const url = `http://localhost:8080/v1/lion-school/cursos`
+    const url = `https://apilionschool.cyclic.app/v1/lion-school/cursos`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -9,7 +9,7 @@ export const preencherDadosCursos = async () => {
 }
 
 export const preencherCardAlunosPeloCurso = async (nome) => {
-    const url = `http://localhost:8080/v1/lion-school/alunos?curso=${nome}`
+    const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos?curso=${nome}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -17,7 +17,7 @@ export const preencherCardAlunosPeloCurso = async (nome) => {
 }
 
 export const preencherCardAlunosPelaSituacao = async (nomeSituacao) => {
-    const url = `http://localhost:8080/v1/lion-school/alunos?situacao=${nomeSituacao}`
+    const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos?situacao=${nomeSituacao}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -25,7 +25,7 @@ export const preencherCardAlunosPelaSituacao = async (nomeSituacao) => {
 }
 
 export const preencherCardAlunoPelaMatricula = async (matricula) => {
-    const url = `http://localhost:8080/v1/lion-school/alunos/${matricula}`
+    const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos/${matricula}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -33,7 +33,7 @@ export const preencherCardAlunoPelaMatricula = async (matricula) => {
 }
 
 export const preencherCardEstatisticasAlunoPelaMatricula = async (matricula) => {
-    const url = `http://localhost:8080/v1/lion-school/alunos/mediaCurso/${matricula}`
+    const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos/mediaCurso/${matricula}`
     const response = await fetch(url)
     const data = await response.json()
 
