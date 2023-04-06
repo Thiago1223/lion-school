@@ -76,15 +76,6 @@ const criarMainTurma = (aluno) => {
         }
     }
 
-    const input = document.getElementById('input-ano').value
-    const search = document.getElementById('container-search')
-    
-    search.addEventListener('click', () => {
-        if (input == aluno.ano) {
-            mostrarTodosCursos()
-        }
-    })
-
     finalizado.addEventListener('click', function () {
         mostrarFinalizados()  
     })
