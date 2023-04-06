@@ -48,6 +48,7 @@ const criarMainTurma = (aluno) => {
             containerCard.classList.add('container-card-finalizado')
             containerCardGerais.append(containerCard)
             containerCard.append(imgCard, nameCard)   
+          
         }
     }
 
@@ -75,8 +76,22 @@ const criarMainTurma = (aluno) => {
         }
     }
 
+
+
+        const input = document.getElementById('input-ano').value
+        const search = document.getElementById('container-search')
+        
+        search.addEventListener('click', () => {
+            if (input == aluno.ano) {
+                mostrarTodosCursos()
+            }
+        })
+
+    
+
+
     finalizado.addEventListener('click', function () {
-        mostrarFinalizados()
+        mostrarFinalizados()  
     })
 
     cursando.addEventListener('click', function () {
@@ -84,7 +99,7 @@ const criarMainTurma = (aluno) => {
     })
 
     todosCursos.addEventListener('click', function () {
-        mostrarTodosCursos()           
+        mostrarTodosCursos()    
     })
 
     containerCard.append(imgCard, nameCard)

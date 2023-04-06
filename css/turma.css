@@ -28,6 +28,37 @@ main{
     padding: 26px;
     gap: 8px;
 }
+.container-ano{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-ano input{
+    height: 24px;
+    width: 80px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    margin-left: 8px;
+}
+.container-ano input:hover{
+    outline: none;
+}
+.container-search{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.container-search i{
+    position: absolute;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 2px;
+    padding: 4px;
+}
 .text-status{
     cursor: pointer;
     transition: .5s;
@@ -148,6 +179,9 @@ main{
         left: 22px;
         top: 164px;
         width: 120px;
-        height: 80px;
+        height: 120px;
+    }
+    .container-ano-info{
+        left: 0;
     }
 }
