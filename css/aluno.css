@@ -115,18 +115,18 @@ main{
         padding: 32px;
     }
     .container-aluno{
-        width: 300px;
-        height: 300px;
+        width: 340px;
+        height: 340px;
     }
     .img-aluno{
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
     }
     .name-aluno{
         text-align: center;
     }
     .container-status{
-        width: auto;
+        width: 340px;
         height: auto;
         gap: 8px;
         padding: 16px;
