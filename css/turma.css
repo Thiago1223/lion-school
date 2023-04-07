@@ -45,6 +45,9 @@ main{
 .container-ano input:hover{
     outline: none;
 }
+.text-selecione-ano{
+    display: none;
+}
 .container-search{
     position: relative;
     display: flex;
@@ -177,11 +180,14 @@ main{
     }
     .container-situacao{
         left: 22px;
-        top: 164px;
+        top: 170px;
         width: 120px;
-        height: 120px;
+        height: 80px;
     }
-    .container-ano-info{
-        left: 0;
+    .text-selecione{
+        display: none;
+    }
+    .text-selecione-ano{
+        display: flex;
     }
 }
