@@ -8,13 +8,14 @@ export const preencherDadosCursos = async () => {
     return data.cursos
 }
 
-export const preencherCardAlunosPeloCurso = async (nome) => {
-    const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos?curso=${nome}`
+export const preencherCardAlunosPeloCurso = async (nome, nomeSituacao) => {
+    const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos?curso=${nome}&situacao=${nomeSituacao}`
     const response = await fetch(url)
     const data = await response.json()
 
     return data.curso
 }
+
 
 export const preencherCardAlunosPelaSituacao = async (nomeSituacao) => {
     const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos?situacao=${nomeSituacao}`

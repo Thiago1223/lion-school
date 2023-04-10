@@ -3,7 +3,7 @@
 import { preencherCardAlunosPeloCurso } from "./app.js"
 
 let turmaCurso = localStorage.getItem('nomeTurma')
-const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
+const alunos = await preencherCardAlunosPeloCurso(turmaCurso, '')
 
 const criarMainTurma = (aluno) => {
 
