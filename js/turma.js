@@ -8,7 +8,6 @@ const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
 
 
    
-       
         
     
 
@@ -16,34 +15,28 @@ const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
 
 
 
-const criarMainTurma = (aluno) =>  {
+const criarMainTurma = (aluno) =>   {
 
 
 
-    function filtrarAno(){
-        let inputAno = document.getElementById('input-ano')
-        const btnPesquisarAno = document.getElementById('container-search')
+   
 
-        btnPesquisarAno.addEventListener('click', function(){
-            if(inputAno.value == aluno.ano){
-                console.log(aluno.ano);     
-                    mostrarTodosCursos()
-                    
+     function filtrarAno() {
+        let inputAno = document.getElementById('input-ano');
+        const btnPesquisarAno = document.getElementById('container-search');
+      
+        btnPesquisarAno.addEventListener('click', async function() {
+          if (inputAno.value == aluno.ano) {
+            console.log(aluno.ano);
+            mostrarTodosCursos();
+          } else {
+            if (containerCardGerais.contains(containerCard)) {
+              containerCardGerais.removeChild(containerCard);
             }
-                else{
-
-                    if (containerCardGerais.contains(containerCard)) {
-                        containerCardGerais.removeChild(containerCard)
-                    }
-
-                }
-               
-              
-            })
-         
-          
-
-        }
+          }
+        });
+      }
+      
     
     filtrarAno()
 
