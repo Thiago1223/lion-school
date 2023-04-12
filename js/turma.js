@@ -1,11 +1,51 @@
 'use strict'
 
-import { preencherCardAlunosPeloCurso } from "./app.js"
+import { preencherCardAlunosPeloAno, preencherCardAlunosPeloCurso, preencherCardAlunosPeloStatus } from "./app.js"
 
 let turmaCurso = localStorage.getItem('nomeTurma')
-const alunos = await preencherCardAlunosPeloCurso(turmaCurso, '')
+const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
 
-const criarMainTurma = (aluno) => {
+
+
+   
+       
+        
+    
+
+
+
+
+
+const criarMainTurma = (aluno) =>  {
+
+
+
+    function filtrarAno(){
+        let inputAno = document.getElementById('input-ano')
+        const btnPesquisarAno = document.getElementById('container-search')
+
+        btnPesquisarAno.addEventListener('click', function(){
+            if(inputAno.value == aluno.ano){
+                console.log(aluno.ano);     
+                    mostrarTodosCursos()
+                    
+            }
+                else{
+
+                    if (containerCardGerais.contains(containerCard)) {
+                        containerCardGerais.removeChild(containerCard)
+                    }
+
+                }
+               
+              
+            })
+         
+          
+
+        }
+    
+    filtrarAno()
 
     const titulo = document.getElementById('title-main')
     titulo.textContent = aluno.nomeCurso.replace('001 - Técnico em ', '')
