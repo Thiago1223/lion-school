@@ -1,6 +1,6 @@
 # Lion School
 
-![](./img/screenshot.png)
+![](./img/screenshot.jpg)
 
 [Clique aqui](https://github.com/Thiago1223/lion-school)
 
