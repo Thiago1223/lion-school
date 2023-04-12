@@ -1,44 +1,28 @@
 'use strict'
 
-import { preencherCardAlunosPeloAno, preencherCardAlunosPeloCurso, preencherCardAlunosPeloStatus } from "./app.js"
+import { preencherCardAlunosPeloCurso } from "./app.js"
 
 let turmaCurso = localStorage.getItem('nomeTurma')
 const alunos = await preencherCardAlunosPeloCurso(turmaCurso)
 
+const criarMainTurma = (aluno) => {
 
+    let inputAno = document.getElementById('input-ano')
+    const btnPesquisarAno = document.getElementById('container-search')
 
-   
-        
-    
-
-
-
-
-
-const criarMainTurma = (aluno) =>   {
-
-
-
-   
-
-     function filtrarAno() {
-        let inputAno = document.getElementById('input-ano');
-        const btnPesquisarAno = document.getElementById('container-search');
-      
-        btnPesquisarAno.addEventListener('click', async function() {
-          if (inputAno.value == aluno.ano) {
-            console.log(aluno.ano);
-            mostrarTodosCursos();
-          } else {
-            if (containerCardGerais.contains(containerCard)) {
-              containerCardGerais.removeChild(containerCard);
+    btnPesquisarAno.addEventListener('click', async function () {
+        if (inputAno.value == '' || inputAno.value < 2018 || inputAno.value > 2024 || isNaN(inputAno.value)) {
+            mostrarTodosCursos()
+        } else {
+            if (inputAno.value == aluno.ano) {
+                mostrarTodosCursos()
+            } else {
+                if (containerCardGerais.contains(containerCard)) {
+                    containerCardGerais.removeChild(containerCard)
+                }
             }
-          }
-        });
-      }
-      
-    
-    filtrarAno()
+        }
+    })
 
     const titulo = document.getElementById('title-main')
     titulo.textContent = aluno.nomeCurso.replace('001 - Técnico em ', '')
@@ -58,12 +42,12 @@ const criarMainTurma = (aluno) =>   {
         containerCard.classList.add('container-card-cursando')
     }
 
-    containerCard.addEventListener('click', (event) => {     
+    containerCard.addEventListener('click', (event) => {
         localStorage.setItem('nomeAluno', aluno.nome)
         localStorage.setItem('imgAluno', aluno.foto)
         localStorage.setItem('matricula', aluno.matricula)
     })
-   
+
     const nameCard = document.createElement('p')
     nameCard.classList.add('name-card')
     nameCard.textContent = aluno.nome
@@ -72,17 +56,14 @@ const criarMainTurma = (aluno) =>   {
     imgCard.classList.add('img-card')
     imgCard.src = aluno.foto
 
-    function mostrarTodosCursos(){
+    function mostrarTodosCursos() {
         if (aluno.status == 'Cursando') {
             containerCard.classList.add('container-card-cursando')
-            containerCardGerais.append(containerCard)
-            containerCard.append(imgCard, nameCard)
         } else {
             containerCard.classList.add('container-card-finalizado')
-            containerCardGerais.append(containerCard)
-            containerCard.append(imgCard, nameCard)   
-          
         }
+        containerCardGerais.append(containerCard)
+        containerCard.append(imgCard, nameCard)
     }
 
     function mostrarCursando() {
@@ -101,7 +82,7 @@ const criarMainTurma = (aluno) =>   {
         if (aluno.status == 'Finalizado') {
             containerCard.classList.add('container-card-finalizado')
             containerCardGerais.append(containerCard)
-            containerCard.append(imgCard, nameCard)  
+            containerCard.append(imgCard, nameCard)
         } else {
             if (containerCardGerais.contains(containerCard)) {
                 containerCardGerais.removeChild(containerCard)
@@ -110,7 +91,7 @@ const criarMainTurma = (aluno) =>   {
     }
 
     finalizado.addEventListener('click', function () {
-        mostrarFinalizados()  
+        mostrarFinalizados()
     })
 
     cursando.addEventListener('click', function () {
@@ -118,13 +99,13 @@ const criarMainTurma = (aluno) =>   {
     })
 
     todosCursos.addEventListener('click', function () {
-        mostrarTodosCursos()    
+        mostrarTodosCursos()
     })
 
     containerCard.append(imgCard, nameCard)
-  
+
     return containerCard
-     
+
 }
 
 const mostrarFiltro = () => {

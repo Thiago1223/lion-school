@@ -24,7 +24,6 @@ export const preencherCardAlunosPeloStatus = async (nomeCurso, status) => {
     return data.curso
 }
 
-
 export const preencherCardAlunosPeloAno = async (nomeCurso, status, ano) => {
     const url = `https://apilionschool.cyclic.app/v1/lion-school/alunos?curso=${nomeCurso}&situacao=${status}&ano=${ano}`
     const response = await fetch(url)

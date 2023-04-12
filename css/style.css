@@ -29,6 +29,7 @@ header{
 .container-logo{
     display: flex;
     gap: 12px;
+    align-items: center;
 }
 .title-logo{
     width: 75px;
