@@ -4,6 +4,8 @@
 
 [Clique aqui](https://github.com/Thiago1223/lion-school)
 
+[Figma](https://www.figma.com/file/ePwWlqquaySOdeHIvMAabV/Lion-School?node-id=0-1&t=l56vZ0m2tlMkIz8Y-0)
+
 [Link para acessar o site](https://lion-school-fawn.vercel.app/)
 
 # Sobre
