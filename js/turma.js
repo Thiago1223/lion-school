@@ -11,7 +11,7 @@ const criarMainTurma = (aluno) => {
     const btnPesquisarAno = document.getElementById('container-search')
 
     btnPesquisarAno.addEventListener('click', async function () {
-        if (inputAno.value == '' || inputAno.value < 2018 || inputAno.value > 2024 || isNaN(inputAno.value)) {
+        if (inputAno.value == '' || isNaN(inputAno.value)) {
             mostrarTodosCursos()
         } else {
             if (inputAno.value == aluno.ano) {

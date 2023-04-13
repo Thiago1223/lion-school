@@ -31,7 +31,7 @@ Projeto de somativa com o intuito de criar um sistema de alunos para uma escola,
 
 ## Desafio extra
 
-- [ ] Além do GitHub Pages, pesquise e implemente outras opções gratuitas para hospedar o front-end.
+- [x] Além do GitHub Pages, pesquise e implemente outras opções gratuitas para hospedar o front-end.
 - [x] Implemente o back-end na plataforma da Microsoft Azure e pesquisa outras opções gratuitas.
 
 ## Tecnologia utilizada 
