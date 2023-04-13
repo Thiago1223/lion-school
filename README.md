@@ -4,7 +4,7 @@
 
 [Clique aqui](https://github.com/Thiago1223/lion-school)
 
-[Link para acessar o site](https://thiago1223.github.io/lion-school/html/index.html)
+[Link para acessar o site](https://lion-school-fawn.vercel.app/)
 
 # Sobre
 
